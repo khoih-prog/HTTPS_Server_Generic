@@ -95,7 +95,7 @@ SSLCert cert = SSLCert(
                );
 
 // Create an SSL-enabled server that uses the certificate
-// The contstructor takes some more parameters, but we go for default values here.
+// The constructor takes some more parameters, but we go for default values here.
 HTTPSServer secureServer = HTTPSServer(&cert);
 
 // Declare a middleware function.
@@ -129,7 +129,7 @@ void middlewareLogging(HTTPRequest * req, HTTPResponse * res, std::function<void
                 req->getRequestString().c_str());
 }
 
-// For details on the implementation of the hanlder functions, refer to the Static-Page example.
+// For details on the implementation of the handler functions, refer to the Static-Page example.
 void handleRoot(HTTPRequest * req, HTTPResponse * res)
 {
   res->setHeader("Content-Type", "text/html");

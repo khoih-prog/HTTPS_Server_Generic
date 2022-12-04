@@ -110,7 +110,7 @@ SSLCert cert = SSLCert(
                );
 
 // Create an SSL-enabled server that uses the certificate
-// The contstructor takes some more parameters, but we go for default values here.
+// The constructor takes some more parameters, but we go for default values here.
 HTTPSServer secureServer = HTTPSServer(&cert);
 
 // Create some handler functions for the various URLs on the server

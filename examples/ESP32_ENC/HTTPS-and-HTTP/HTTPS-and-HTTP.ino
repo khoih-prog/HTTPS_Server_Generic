@@ -102,7 +102,7 @@ HTTPSServer secureServer = HTTPSServer(&cert);
 // Additionally, we create an HTTPServer for unencrypted traffic
 HTTPServer insecureServer = HTTPServer();
 
-// The hanlder functions are the same as in the Static-Page example.
+// The handler functions are the same as in the Static-Page example.
 // The only difference is the check for isSecure in the root handler
 
 void handleRoot(HTTPRequest * req, HTTPResponse * res)
