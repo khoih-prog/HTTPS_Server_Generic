@@ -43,7 +43,7 @@ jobs:
     if: "contains( github.event.pull_request.labels.*.name, 'CI: Build Examples' )"
     steps:
     - name: Remove Label from PR
-      uses: octokit/request-action@91508edec0a9561c2fefb9282491ced243bed312
+      uses: octokit/request-action@89a1754fe82ca777b044ca8e79e9881a42f15a93
       with:
         route: DELETE /repos/:repository/issues/:issue_number/labels/:name
         repository: ${{ github.repository }}
