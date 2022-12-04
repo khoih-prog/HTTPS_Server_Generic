@@ -16,7 +16,7 @@
        https://github.com/me-no-dev/arduino-esp32fs-plugin
     3) Upload the static files from the data/ directory of the example to your
        module's SPIFFs by using "ESP32 Sketch Data Upload" from the tools menu.
-       If you face any problems, read the description of the libraray mentioned
+       If you face any problems, read the description of the library mentioned
        above.
        Note: If mounting SPIFFS fails, the script will wait for a serial connection
        (open your serial monitor!) and ask if it should format the SPIFFS partition.
@@ -60,7 +60,7 @@
 // Working with c++ strings
 #include <string>
 
-// Define the name of the directory for public files in the SPIFFS parition
+// Define the name of the directory for public files in the SPIFFS partition
 #define DIR_PUBLIC "/public"
 
 // We need to specify some content-type mapping, so the resources get delivered with the
@@ -150,7 +150,7 @@ void setup()
       while (true);
     }
 
-    Serial.println("SPIFFS has been formated.");
+    Serial.println("SPIFFS has been formatted.");
   }
 
   Serial.println("SPIFFS has been mounted.");
@@ -316,7 +316,7 @@ SSLCert * getCertificate()
     else
     {
       // Certificate generation failed. Inform the user.
-      Serial.println("An error occured during certificate generation.");
+      Serial.println("An error occurred during certificate generation.");
       Serial.print("Error code is 0x");
       Serial.println(res, HEX);
       Serial.println("You may have a look at SSLCert.h to find the reason for this error.");
@@ -613,7 +613,7 @@ void handlePostEvent(HTTPRequest * req, HTTPResponse * res)
 }
 
 /**
-   This handler will delete an event (meaning: deactive the event)
+   This handler will delete an event (meaning: deactivate the event)
 */
 void handleDeleteEvent(HTTPRequest * req, HTTPResponse * res)
 {
