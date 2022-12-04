@@ -111,12 +111,12 @@
 
 This library is based on, modified from:
 
-1. [Frank Hessel's esp32_https_server](https://github.com/fhessel/esp32_https_server)
-2. [Khoi Hoang's ESP32_HTTPS_Server](https://github.com/khoih-prog/ESP32_HTTPS_Server)
+1. [Frank Hessel's **esp32_https_server**](https://github.com/fhessel/esp32_https_server)
+2. [Khoi Hoang's **ESP32_HTTPS_Server**](https://github.com/khoih-prog/ESP32_HTTPS_Server)
 
-to apply the **HTTPS Server** feature of the **powerful** [esp32_https_server](https://github.com/fhessel/esp32_https_server) into **other ESP32 boards, such as WT32_ETH01 (ESP32 + LwIP LAN8720), (ESP32 + LwIP W5500) and (ESP32 + LwIP ENC28J60) Ethernet**.
+to apply the **HTTPS Server** feature of the powerful [**esp32_https_server**](https://github.com/fhessel/esp32_https_server) into **other ESP32 boards, such as WT32_ETH01 (ESP32 + LwIP LAN8720), (ESP32 + LwIP W5500) and (ESP32 + LwIP ENC28J60) Ethernet**.
 
-In the future, this library will support powerful-enough boards using `LwIP WiFi/Ethernet`, such as ESP8266, Portenta_H7, RP2040W, Teensy 4.1, etc.
+In the future, this library will support `powerful-enough` boards using `LwIP WiFi/Ethernet`, such as ESP8266, Portenta_H7, RP2040W, Teensy 4.1, etc.
 
 The library provides these following features:
 
@@ -212,7 +212,7 @@ SSLCert cert = SSLCert(example_crt_DER, example_crt_DER_len,
 HTTPSServer secureServer = HTTPSServer(&cert);
 ```
 
-By default, the server will listen on port `443`. If you want to change that (or some other options), you can have a look at the optional parameters of the [`HTTPServer`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html) or [`HTTPSServer`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPSServer.html) constructors.
+By default, the server will listen on port `443`. If you want to change that (or some other options), you can have a look at the optional parameters of the [**HTTPServer**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html) or [**HTTPSServer**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPSServer.html) constructors.
 
 The only difference between the HTTP and HTTPS version is the certificate which you have to configure. Keep in mind that each opened connection of the TLS-enabled `HTTPSServer` requires additional 40 to 50 kB of heap memory for the TLS connection itself. This has to be considered when increasing `maxConnections`.
 
@@ -240,9 +240,9 @@ void handleRoot(HTTPRequest * req, HTTPResponse * res)
 }
 ```
 
-As you can see, the function gets references to the [`HTTPRequest`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPRequest.html) and [`HTTPResponse`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPResponse.html). You can use the request to read headers, parameters, authentication information etc. The response can be used to send data to the client, set headers or HTTP status codes.
+As you can see, the function gets references to the [**HTTPRequest**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPRequest.html) and [**HTTPResponse**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPResponse.html). You can use the request to read headers, parameters, authentication information etc. The response can be used to send data to the client, set headers or HTTP status codes.
 
-Now we need to tell the server which URL should be served by this function. This can be done by creating a [`ResourceNode`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) (usually in your `setup()` function).
+Now we need to tell the server which URL should be served by this function. This can be done by creating a [**ResourceNode**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) (usually in your `setup()` function).
 
 ```C++
 ResourceNode * nodeRoot = new ResourceNode("/", "GET", &handleRoot);
@@ -254,7 +254,7 @@ The second parameter is the HTTP method, `"GET"` in this case.
 
 Finally, you pass a reference to the request handler function to link it to the route and method.
 
-Now you just need to register the created [`ResourceNode`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) at your server:
+Now you just need to register the created [**ResourceNode**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) at your server:
 
 ```C++
 myServer.registerNode(nodeRoot);
@@ -262,13 +262,13 @@ myServer.registerNode(nodeRoot);
 
 That's everything you need to do for a single web page on your server.
 
-Note that you can define a single [`ResourceNode`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) via `HTTPServer::setDefaultNode()`, which will be called if no other node on the server matches. Method and route are ignored in this case. Most examples use this to define a 404-handler, which might be a good idea for most scenarios. In case no default node is specified, the server will return with a small error page if no matching route is found.
+Note that you can define a single [**ResourceNode**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1ResourceNode.html) via `HTTPServer::setDefaultNode()`, which will be called if no other node on the server matches. Method and route are ignored in this case. Most examples use this to define a 404-handler, which might be a good idea for most scenarios. In case no default node is specified, the server will return with a small error page if no matching route is found.
 
 ---
 
 ### Start the Server
 
-A call to [`HTTPServer::start()`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html#a1b1b6bce0b52348ca5b5664cf497e039) will start the server so that it is listening on the previously specified port:
+A call to [**HTTPServer::start()**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html#a1b1b6bce0b52348ca5b5664cf497e039) will start the server so that it is listening on the previously specified port:
 
 ```C++
 myServer.start();
@@ -276,7 +276,7 @@ myServer.start();
 
 This code usually goes into your `setup()` function. You can use `HTTPServer::isRunning()` to check whether the server started successfully.
 
-By default, you need to pass control to the server explicitly. This is done by calling the [`HTTPServer::loop()`](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html#af8f68f5ff6ad101827bcc52217249fe2) function, which you usually will put into your Arduino sketch's `loop()` function. Once called, the server will first check for incoming connection (up to the maximum connection count that has been defined in the constructor), and then handle every open connection if it has new data on the socket. So your request handler functions will be called during the call to `loop()`. Note that if one of your handler functions is blocking, it will block all other connections as well.
+By default, you need to pass control to the server explicitly. This is done by calling the [**HTTPServer::loop()**](https://khoih-prog.github.io/HTTPS_Server_Generic_docs/classhttpsserver_1_1HTTPServer.html#af8f68f5ff6ad101827bcc52217249fe2) function, which you usually will put into your Arduino sketch's `loop()` function. Once called, the server will first check for incoming connection (up to the maximum connection count that has been defined in the constructor), and then handle every open connection if it has new data on the socket. So your request handler functions will be called during the call to `loop()`. Note that if one of your handler functions is blocking, it will block all other connections as well.
 
 ---
 
@@ -284,7 +284,7 @@ By default, you need to pass control to the server explicitly. This is done by c
 
 If you want to have the server running in the background (and not calling `loop()` by yourself every few milliseconds), you can make use of the ESP32's task feature and put the whole server in a separate task.
 
-See the [Async-Server example](https://github.com/khoih-prog/HTTPS_Server_Generic/tree/main/examples/ESP32_WiFi/Async-Server) to see how this can be done.
+See the [**Async-Server** example](https://github.com/khoih-prog/HTTPS_Server_Generic/tree/main/examples/ESP32_WiFi/Async-Server) to see how this can be done.
 
 ---
 ---
