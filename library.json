@@ -1,0 +1,60 @@
+{
+  "name":"HTTPS_Server_Generic",
+  "version": "1.2.0",
+  "description":"This is HTTPS/HTTP Server Library for ESP32, WT32_ETH01, ESP32 + LwIP W5500, ESP32 + LwIP ENC28J60. In the future, this library will support powerful-enough boards using LwIP WiFi/Ethernet, such as ESP8266, Portenta_H7, RP2040W, Teensy 4.1, etc.",
+  "keywords":"http, https, async, async-https-webserver, async-http-webserver, websocket, webserver, esp32, w5500, enc28j60, wt32-eth01, lwip, lwip-ethernet, lwip-wifi, lwip-w5500, lwip-enc28j60, esp8266, mbed, ssl, tls",
+  "authors": 
+  [
+    {
+      "name": "Frank Hessel",
+      "url":   "https://github.com/fhessel"
+    },
+    {
+      "name":  "Khoi Hoang",
+      "url":   "https://github.com/khoih-prog",
+      "email": "khoih.prog@gmail.com",
+      "maintainer": true
+    }  
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/khoih-prog/HTTPS_Server_Generic"
+  },
+  "homepage": "https://github.com/khoih-prog/HTTPS_Server_Generic",
+  "export": {
+    "exclude": [
+      "linux",
+      "extras",
+      "tests"
+    ]
+  },
+  "dependencies": 
+  [
+    {
+      "owner": "khoih-prog",
+      "name": "Functional-Vlpp",
+      "version": "^1.0.2"
+    },
+    {
+      "owner": "khoih-prog",
+      "name": "WebServer_WT32_ETH01",
+      "version": "^1.5.1"
+    },
+    {
+      "owner": "khoih-prog",
+      "name": "WebServer_ESP32_W5500",
+      "version": "^1.5.1"
+    },
+    {
+      "owner": "khoih-prog",
+      "name": "WebServer_ESP32_ENC",
+      "version": "^1.5.1"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "examples": "examples/*/*/*.ino",
+  "headers": ["HTTPS_Server_Generic.h"]
+}
