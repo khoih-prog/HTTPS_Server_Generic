@@ -154,7 +154,7 @@ void setup()
   cert = new SSLCert();
 
   // Now, we use the function createSelfSignedCert to create private key and certificate.
-  // The function takes the following paramters:
+  // The function takes the following parameters:
   // - Key size: 1024 or 2048 bit should be fine here, 4096 on the ESP might be "paranoid mode"
   //   (in generel: shorter key = faster but less secure)
   // - Distinguished name: The name of the host as used in certificates.
@@ -173,7 +173,7 @@ void setup()
   // Now check if creating that worked
   if (createCertResult != 0)
   {
-    Serial.printf("Cerating certificate failed. Error Code = 0x%02X, check SSLCert.hpp for details", createCertResult);
+    Serial.printf("Creating certificate failed. Error Code = 0x%02X, check SSLCert.hpp for details", createCertResult);
 
     while (true)
       delay(500);
@@ -199,7 +199,7 @@ void setup()
   // A short reminder on key security: If you're working on something professional, be aware that the storage of the ESP32 is
   // not encrypted in any way. This means that if you just write it to the flash storage, it is easy to extract it if someone
   // gets a hand on your hardware. You should decide if that's a relevant risk for you and apply countermeasures like flash
-  // encryption if neccessary
+  // encryption if necessary
 
   // We can now use the new certificate to setup our server as usual.
   secureServer = new HTTPSServer(cert);

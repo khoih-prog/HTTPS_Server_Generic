@@ -101,7 +101,7 @@ SSLCert cert = SSLCert(
                );
 
 // Create an SSL-enabled server that uses the certificate
-// The contstructor takes some more parameters, but we go for default values here.
+// The constructor takes some more parameters, but we go for default values here.
 HTTPSServer secureServer = HTTPSServer(&cert);
 
 // Handler functions
@@ -260,8 +260,8 @@ void handleSVG(HTTPRequest * req, HTTPResponse * res)
 }
 
 // This is a more generic demo for the query parameters. It makes use of the iterator
-// interface to access them, which is useful if you do not know the paramter names in
-// adavance.
+// interface to access them, which is useful if you do not know the parameter names in
+// advance.
 void handleQueryDemo(HTTPRequest * req, HTTPResponse * res)
 {
   // A word of warning: In this example, we use the query parameters and directly print
@@ -275,7 +275,7 @@ void handleQueryDemo(HTTPRequest * req, HTTPResponse * res)
   res->println("<title>Query Parameter Demo</title>");
   res->println("</head>");
   res->println("<body>");
-  res->println("<p>The following query paramters have been set:</p>");
+  res->println("<p>The following query parameters have been set:</p>");
 
   // Start a table to display the parameters
   res->println("<table style=\"border:1px solid black collapse;\">");
@@ -437,7 +437,7 @@ void setup()
   // Add the path parameter
   // Note: The order of nodes may become important here. If you have one node for "/led" (e.g. list of LEDs)
   // and one node for /led/* (LED details), you should register the non-parameterized version first. The server
-  // follows a first-match policy. If you would register the details node first, a call to /led/ will be targetted
+  // follows a first-match policy. If you would register the details node first, a call to /led/ will be targeted
   // at the details handler function with an empty parameter, which is probably not what you want.
   secureServer.registerNode(nodeURLParam);
 
