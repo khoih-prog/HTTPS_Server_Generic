@@ -584,7 +584,7 @@ bg=white</panel_attributes>
 +~ResourceParameters()
 
 +getRequestParameter(name: &amp;std::string): std::string
-+getRequestParameterInt(name: &amp;std::sting): uint16_t
++getRequestParameterInt(name: &amp;std::string): uint16_t
 +getUrlParameter(idx: uint8_t): std::string
 +getUrlParameterInt(idx: uint8_t): uint16_t
 +isRequestParameterSet(name: &amp;std::string): bool

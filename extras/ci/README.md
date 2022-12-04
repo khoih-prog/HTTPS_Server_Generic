@@ -25,7 +25,7 @@ System Requirements
 You can use `extras/ci/scripts/build-example.sh <"wroom"|"wrover"> <example-name>` to build a specific example.
 The main purpose of this is to check that everything still compiles as intended.
 The script will only try to build the example, but it will not flash it.
-The project folder is created in `tmp/<example-name>-<board-name>` in the root of the repositry.
+The project folder is created in `tmp/<example-name>-<board-name>` in the root of the repository.
 If you want, you can run `pio run -t upload -e <"wroom"|"wrover">` in these project directories to upload the example to a board.
 
 To build all examples (and to check that everything works), there is a script for manual testing: `extras/ci/scripts/build-example.sh`

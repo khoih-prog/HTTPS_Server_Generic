@@ -31,7 +31,7 @@
 // The favicon (binary)
 #include "data/favicon.h"
 
-// Inlcudes for setting up the server
+// Includes for setting up the server
 #include "src/HTTPSServer.hpp"
 
 // Includes to define request handler callbacks

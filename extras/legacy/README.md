@@ -27,7 +27,7 @@ The repository currently contains the HTTPS library as well as a sample scripts 
 
 Furthermore, you need to do some setup after cloning the repository:
 
-- The example needs to connect to your local Wifi and therefor need credentials. For convenience, `data/wifi/wifi.example.h` contains a code skeleton for that. Just copy it to `/data/wifi/wifi.h` and enter your SSID and WPA2 PSK.
+- The example needs to connect to your local Wifi and therefore need credentials. For convenience, `data/wifi/wifi.example.h` contains a code skeleton for that. Just copy it to `/data/wifi/wifi.h` and enter your SSID and WPA2 PSK.
 - Besides encryption, one main reason to use HTTP with TLS is to authenticate the server. So the server needs a certificate. If you just want to try the code, the repository contains a script to create a basic self-signed certificate. Note that this will be shown as insecure in your browser and you need parameters to allow such certificates if you access your server using command line tools like `openssl s_client`.
 You can run `tools/cert/create_cert.sh` to create header files with certificate data in `data/cert/`. In a real-world setup, you should create those certificates more carefully.
 
@@ -46,7 +46,7 @@ The sketch in `https_server.cpp` shows by example how to use various functions o
 The library is self-contained, so you should be fine by just copying the `https/` folder into your project. Include it into your sketch as follows:
 
 ```C++
-// Inlcudes for setting up the server
+// Includes for setting up the server
 #include "https/HTTPSServer.hpp"
 
 // Includes to define request handler callbacks
