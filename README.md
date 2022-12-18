@@ -56,10 +56,10 @@
   * [For ESP32_SC_ENC](#For-ESP32_SC_ENC)
 * [Example Async-Server](#Example-Async-Server) 
 * [Debug Terminal Output Samples](#debug-terminal-output-samples)
-  * [1. Async-Server on ESP32_DEV with ESP32_ENC28J60](#1-Async-Server-on-ESP32_DEV-with-ESP32_ENC28J60)
-  * [2. Async-Server on ESP32_DEV with ESP32_W5500](#2-Async-Server-on-ESP32_DEV-with-ESP32_W5500)
-  * [3. Async_Server on ESP32S3_DEV with ESP32_S3_ENC28J60](#3-Async-Server-on-ESP32S3_DEV-with-ESP32_S3_ENC28J60)
-  * [4. Async_Server on ESP32S3_DEV with ESP32_S3_W5500](#4-Async-Server-on-ESP32S3_DEV-with-ESP32_S3_W5500)
+  * [1. Async_Server on ESP32_DEV with ESP32_ENC28J60](#1-Async_Server-on-ESP32_DEV-with-ESP32_ENC28J60)
+  * [2. Async_Server on ESP32_DEV with ESP32_W5500](#2-Async_Server-on-ESP32_DEV-with-ESP32_W5500)
+  * [3. Async_Server on ESP32S3_DEV with ESP32_S3_ENC28J60](#3-Async_Server-on-ESP32S3_DEV-with-ESP32_S3_ENC28J60)
+  * [4. Async_Server on ESP32S3_DEV with ESP32_S3_W5500](#4-Async_Server-on-ESP32S3_DEV-with-ESP32_S3_W5500)
 * [Troubleshooting](#troubleshooting)
 * [Issues](#issues)
 * [TO DO](#to-do)
@@ -567,7 +567,7 @@ https://github.com/khoih-prog/HTTPS_Server_Generic/blob/804d9320ceba0ccf51ac1f4b
 
 ### Debug Terminal Output Samples
 
-#### 1. Async-Server on ESP32_DEV with ESP32_ENC28J60
+#### 1. Async_Server on ESP32_DEV with ESP32_ENC28J60
 
 Following are debug terminal output when running example [Async-Server](examples/ESP32_ENC/Async-Server) on `ESP32_DEV with LwIP ENC28J60`, using ESP32 core `v2.0.0+`, to demonstrate the operation Async HTTPS WebServer serving multiple clients simultaneously
 
@@ -600,7 +600,7 @@ loop()
 
 ---
 
-#### 2. Async-Server on ESP32_DEV with ESP32_W5500
+#### 2. Async_Server on ESP32_DEV with ESP32_W5500
 
 Following are debug terminal output when running example [Async-Server](examples/ESP32_W5500/Async-Server) on `ESP32_DEV with LwIP W5500`, using ESP32 core `v2.0.0+`, to demonstrate the operation Async HTTPS WebServer serving multiple clients simultaneously
 
