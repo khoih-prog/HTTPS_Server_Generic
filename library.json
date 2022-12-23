@@ -1,6 +1,6 @@
 {
   "name":"HTTPS_Server_Generic",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description":"This is HTTPS/HTTP Server Library for ESP32, WT32_ETH01, ESP32 + LwIP W5500, ESP32 + LwIP ENC28J60. In the future, this library will support powerful-enough boards using LwIP WiFi/Ethernet, such as ESP8266, Portenta_H7, RP2040W, Teensy 4.1, etc.",
   "keywords":"http, https, async, async-https-webserver, async-http-webserver, websocket, webserver, esp32, w5500, enc28j60, wt32-eth01, lwip, lwip-ethernet, lwip-wifi, lwip-w5500, lwip-enc28j60, esp8266, mbed, ssl, tls",
   "authors": 
@@ -58,13 +58,13 @@
     {
       "owner": "khoih-prog",
       "name": "WebServer_ESP32_SC_W5500",
-      "version": ">=1.0.1",
+      "version": ">=1.2.1",
       "platforms": ["espressif32"]
     },
     {
       "owner": "khoih-prog",
       "name": "WebServer_ESP32_SC_ENC",
-      "version": ">=1.0.0",
+      "version": ">=1.2.0",
       "platforms": ["espressif32"]
     }
   ],

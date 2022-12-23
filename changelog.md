@@ -15,6 +15,7 @@
 ## Table of contents
 
 * [Changelog](#changelog)
+  * [Releases v1.4.0](#releases-v140)
   * [Releases v1.3.0](#releases-v130)
   * [Releases v1.2.0](#releases-v120)
 
@@ -24,6 +25,10 @@
 ---
 
 ## Changelog
+
+#### Releases v1.4.0
+
+1. Add support to `ESP32S2/C3` using `LwIP W5500 or ENC28J60`
 
 #### Releases v1.3.0
 

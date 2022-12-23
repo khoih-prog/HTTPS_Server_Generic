@@ -33,7 +33,7 @@
 * [Advanced Configuration](#Advanced-Configuration)
   * [Saving Space by Reducing Functionality](#Saving-Space-by-Reducing-Functionality)
   * [Configure Logging](#Configure-Logging)
-* [How to connect W5500 or ENC28J60 to ESP32_S3](#How-to-connect-W5500-or-ENC28J60-to-ESP32_S3)
+* [How to connect W5500 or ENC28J60 to ESP32_S2/S3/C3](#How-to-connect-W5500-or-ENC28J60-to-ESP32_S2S3C3)
 * [HOWTO Example Usage](#HOWTO-Example-Usage)
 * [Examples](#examples)
   * [For ESP32_WiFi](#For-ESP32_WiFi)
@@ -60,6 +60,7 @@
   * [2. Async_Server on ESP32_DEV with ESP32_W5500](#2-Async_Server-on-ESP32_DEV-with-ESP32_W5500)
   * [3. Async_Server on ESP32S3_DEV with ESP32_S3_ENC28J60](#3-Async_Server-on-ESP32S3_DEV-with-ESP32_S3_ENC28J60)
   * [4. Async_Server on ESP32S3_DEV with ESP32_S3_W5500](#4-Async_Server-on-ESP32S3_DEV-with-ESP32_S3_W5500)
+  * [5. Async_Server on ESP32C3_DEV with ESP32_C3_W5500](#5-Async_Server-on-ESP32C3_DEV-with-ESP32_C3_W5500) 
 * [Troubleshooting](#troubleshooting)
 * [Issues](#issues)
 * [TO DO](#to-do)
@@ -110,10 +111,11 @@ The library provides these following features:
 
 #### 3. **WT32_ETH01** using ESP32-based boards and LAN8720 Ethernet
 
-#### 4. ESP32S3 using LwIP ENC28J60 or W5500
+#### 4. ESP32S2/S3/C3 using LwIP ENC28J60 or W5500
 
 1. **ESP32-S3 (ESP32S3_DEV, ESP32_S3_BOX, UM TINYS3, UM PROS3, UM FEATHERS3, etc.)**
-
+2. **ESP32-S2 (ESP32-S2 Saola, AI-Thinker ESP-12K, etc.)**
+3. **ESP32-C3 (ARDUINO_ESP32C3_DEV, etc.)**
 
 --- 
 
@@ -122,6 +124,22 @@ The library provides these following features:
 <p align="center">
     <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32S3_DEV.png">
 </p> 
+
+
+#### ESP32S2_DEV
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32S2_DEV.png">
+</p> 
+
+
+#### ESP32C3_DEV
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32_C3_DevKitC_02.png">
+</p> 
+
+
 
 ---
 
@@ -149,8 +167,6 @@ The library provides these following features:
  
  
 
-
-
 ---
 ---
 
@@ -164,8 +180,8 @@ The library provides these following features:
  5. [`WebServer_WT32_ETH01 library v1.5.1+`](https://github.com/khoih-prog/WebServer_WT32_ETH01) if necessary to use WT32_ETH01 boards. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/WebServer_WT32_ETH01.svg?)](https://www.ardu-badge.com/WebServer_WT32_ETH01)
  6. [`WebServer_ESP32_ENC library v1.5.1+`](https://github.com/khoih-prog/WebServer_ESP32_ENC) if necessary to use ESP32 boards using LwIP ENC28J60 Ethernet. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/WebServer_ESP32_ENC.svg?)](https://www.ardu-badge.com/WebServer_ESP32_ENC)
  7. [`WebServer_ESP32_W5500 library v1.5.1+`](https://github.com/khoih-prog/WebServer_ESP32_W5500) if necessary to use ESP32 boards using LwIP W5500 Ethernet. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/WebServer_ESP32_W5500.svg?)](https://www.ardu-badge.com/WebServer_ESP32_W5500)
- 8. [`WebServer_ESP32_SC_ENC library v1.0.0+`](https://github.com/khoih-prog/WebServer_ESP32_SC_ENC) if necessary to use `ESP32_S2/S3/C3` boards using `LwIP ENC28J60` Ethernet. [![GitHub release](https://img.shields.io/github/release/khoih-prog/WebServer_ESP32_SC_ENC.svg)](https://github.com/khoih-prog/WebServer_ESP32_SC_ENC/releases)
- 9. [`WebServer_ESP32_SC_W5500 library v1.0.1+`](https://github.com/khoih-prog/WebServer_ESP32_SC_W5500) if necessary to use `ESP32_S2/S3/C3` boards using `LwIP W5500` Ethernet. [![GitHub release](https://img.shields.io/github/release/khoih-prog/WebServer_ESP32_SC_W5500.svg)](https://github.com/khoih-prog/WebServer_ESP32_SC_W5500/releases)
+ 8. [`WebServer_ESP32_SC_ENC library v1.2.0+`](https://github.com/khoih-prog/WebServer_ESP32_SC_ENC) if necessary to use `ESP32_S2/S3/C3` boards using `LwIP ENC28J60` Ethernet. [![GitHub release](https://img.shields.io/github/release/khoih-prog/WebServer_ESP32_SC_ENC.svg)](https://github.com/khoih-prog/WebServer_ESP32_SC_ENC/releases)
+ 9. [`WebServer_ESP32_SC_W5500 library v1.2.1+`](https://github.com/khoih-prog/WebServer_ESP32_SC_W5500) if necessary to use `ESP32_S2/S3/C3` boards using `LwIP W5500` Ethernet. [![GitHub release](https://img.shields.io/github/release/khoih-prog/WebServer_ESP32_SC_W5500.svg)](https://github.com/khoih-prog/WebServer_ESP32_SC_W5500/releases)
  
 
 
@@ -335,7 +351,7 @@ To set these flags in PlatformIO, you can modify your `platformio.ini`. To disab
 platform = espressif32
 board = esp32dev
 framework = arduino
-lib_deps = khoih-prog/HTTPS_Server_Generic@~1.2.0
+lib_deps = khoih-prog/HTTPS_Server_Generic@~1.4.0
 build_flags =
   -DHTTPS_DISABLE_SELFSIGNING
 ```
@@ -379,7 +395,7 @@ To set these flags in PlatformIO, you can modify your `platformio.ini`. The foll
 platform = espressif32
 board = esp32dev
 framework = arduino
-lib_deps = khoih-prog/HTTPS_Server_Generic@~1.2.0
+lib_deps = khoih-prog/HTTPS_Server_Generic@~1.4.0
 build_flags =
   -DHTTPS_LOGLEVEL=2
   -DHTTPS_LOGTIMESTAMP
@@ -389,8 +405,39 @@ build_flags =
 ---
 ---
 
+### How to connect W5500 or ENC28J60 to ESP32_S2/S3/C3
 
-### How to connect W5500 or ENC28J60 to ESP32_S3
+
+##### W5500
+
+`FULL_DUPLEX, 100Mbps`
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/W5500.png">
+</p>
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/W5500_small.png">
+</p> 
+ 
+---
+
+
+##### ENC28J60
+
+`FULL_DUPLEX, 10Mbps`
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ENC28J60.png">
+</p>
+
+---
+
+#### ESP32S3_DEV
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32S3_DEV.png">
+</p> 
 
 You can change the `INT` pin to another one. Default is `GPIO4`
 
@@ -401,33 +448,6 @@ You can change the `INT` pin to another one. Default is `GPIO4`
 
 ---
 
-#### ESP32S3_DEV
-
-<p align="center">
-    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32S3_DEV.png">
-</p> 
-
----
-
-
-#### W5500
-
-<p align="center">
-    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/W5500.png">
-</p>
-
-<p align="center">
-    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/W5500_small.png">
-</p> 
-
-#### ENC28J60
-
-<p align="center">
-    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ENC28J60.png">
-</p>
- 
----
-
 |W5500 or ENC28J60|<--->|ESP32_S3|
 |:-:|:-:|:-:|
 |MOSI|<--->|GPIO11|
@@ -435,6 +455,62 @@ You can change the `INT` pin to another one. Default is `GPIO4`
 |SCK|<--->|GPIO12|
 |SS|<--->|GPIO10|
 |INT|<--->|GPIO4|
+|RST|<--->|RST|
+|GND|<--->|GND|
+|3.3V|<--->|3.3V|
+
+---
+
+#### ESP32S2_DEV
+
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32S2_DEV.png">
+</p> 
+
+
+You can change the `INT` pin to another one. Default is `GPIO4`
+
+```cpp
+// Must connect INT to GPIOxx or not working
+#define INT_GPIO            4
+```
+
+|W5500 or ENC28J60|<--->|ESP32_S2|
+|:-:|:-:|:-:|
+|MOSI|<--->|GPIO35|
+|MISO|<--->|GPIO37|
+|SCK|<--->|GPIO36|
+|SS|<--->|GPIO34|
+|INT|<--->|GPIO4|
+|RST|<--->|RST|
+|GND|<--->|GND|
+|3.3V|<--->|3.3V|
+
+
+---
+
+#### ESP32C3_DEV
+
+<p align="center">
+    <img src="https://github.com/khoih-prog/HTTPS_Server_Generic/raw/main/Images/ESP32_C3_DevKitC_02.png">
+</p> 
+
+
+You can change the `INT` pin to another one. Default is `GPIO4`
+
+```cpp
+// Must connect INT to GPIOxx or not working
+#define INT_GPIO            10
+```
+
+|W5500 or ENC28J60|<--->|ESP32_C3|
+|:-:|:-:|:-:|
+|MOSI|<--->|GPIO6|
+|MISO|<--->|GPIO5|
+|SCK|<--->|GPIO4|
+|SS|<--->|GPIO7|
+|INT|<--->|GPIO10|
 |RST|<--->|RST|
 |GND|<--->|GND|
 |3.3V|<--->|3.3V|
@@ -575,7 +651,7 @@ Following are debug terminal output when running example [Async-Server](examples
 ```cpp
 Starting Async_Server on ESP32_DEV with ESP32_ENC28J60
 WebServer_ESP32_ENC v1.5.1 for core v2.0.0+
-HTTPS_Server_Generic v1.3.0
+HTTPS_Server_Generic v1.4.0
 
 ETH Started
 ETH Connected
@@ -608,7 +684,7 @@ Following are debug terminal output when running example [Async-Server](examples
 ```cpp
 Starting Async_Server on ESP32_DEV with ESP32_W5500
 WebServer_ESP32_W5500 v1.5.1 for core v2.0.0+
-HTTPS_Server_Generic v1.3.0
+HTTPS_Server_Generic v1.4.0
 
 ETH Started
 ETH Connected
@@ -637,8 +713,8 @@ Following are debug terminal output when running example [Async-Server](examples
 
 ```cpp
 Starting Async_Server on ESP32S3_DEV with ESP32_S3_ENC28J60
-WebServer_ESP32_SC_ENC v1.0.0 for core v2.0.0+
-HTTPS_Server_Generic v1.3.0
+WebServer_ESP32_SC_ENC v1.2.0 for core v2.0.0+
+HTTPS_Server_Generic v1.4.0
 
 ETH Started
 ETH Connected
@@ -677,8 +753,8 @@ Following are debug terminal output when running example [Async-Server](examples
 
 ```cpp
 Starting Async_Server on ESP32S3_DEV with ESP32_S3_W5500
-WebServer_ESP32_SC_W5500 v1.0.1 for core v2.0.0+
-HTTPS_Server_Generic v1.3.0
+WebServer_ESP32_SC_W5500 v1.2.1 for core v2.0.0+
+HTTPS_Server_Generic v1.4.0
 
 ETH Started
 ETH Connected
@@ -710,6 +786,45 @@ loop()
 ```
 
 ---
+
+#### 5. Async_Server on ESP32C3_DEV with ESP32_C3_W5500
+
+Following are debug terminal output when running example [Async-Server](examples/ESP32_SC_W5500/Async-Server) on `ESP32C3_DEV with LwIP W5500`, using ESP32 core `v2.0.0+`, to demonstrate the operation Async HTTPS WebServer serving multiple clients simultaneously
+
+
+```
+Starting Async_Server on ESP32C3_DEV with ESP32_C3_W5500
+WebServer_ESP32_SC_W5500 v1.2.1 for core v2.0.0+
+HTTPS_Server_Generic v1.4.0
+Using built-in mac_eth = 7C:DF:A1:BC:BC:53
+
+ETH Started
+ETH Connected
+ETH MAC: 7C:DF:A1:BC:BC:53, IPv4: 192.168.2.135
+FULL_DUPLEX, 100Mbps
+HTTPS EthernetWebServer is @ IP : 192.168.2.135
+To access, use https://192.168.2.135
+Creating server task... 
+Starting server...
+Server ready.
+loop()
+...
+loop()
+[HTTPS:I] New connection. Socket FID=49
+[HTTPS:E] SSL_accept failed. Aborting handshake. FID=49
+[HTTPS:I] Connection closed. Socket FID=49
+loop()
+[HTTPS:I] New connection. Socket FID=49
+[HTTPS:E] SSL_accept failed. Aborting handshake. FID=49
+[HTTPS:I] Connection closed. Socket FID=49
+[HTTPS:I] New connection. Socket FID=49
+[HTTPS:I] Request: GET / (FID=49)
+[HTTPS:I] Request: GET /favicon.ico (FID=49)
+loop()
+...
+```
+
+---
 ---
 
 ### Troubleshooting
@@ -733,7 +848,6 @@ Submit issues to: [HTTPS_Server_Generic issues](https://github.com/khoih-prog/HT
  2. For ESP32, using `ESP_TLS` for future ESP-IDF v5.0 instead of to-be-deprecated `OpenSSL`
  3. Using [ArduinoJson](https://github.com/bblanchon/ArduinoJson) `v6` instead of `v5.13.5-`
  4. Add support to more powerful-enough boards using LwIP WiFi/Ethernet, such as  :
-   - `ESP32S2/C3` using `LwIP W5500 or ENC28J60`
    - `ESP8266` WiFi / Ethernet
    - `Portenta_H7` WiFi / Ethernet
    - `RP2040W` WiFi
@@ -748,6 +862,7 @@ Submit issues to: [HTTPS_Server_Generic issues](https://github.com/khoih-prog/HT
  2. Add Table-of-Contents and Version String
  3. Use `allman astyle` and add `utils`
  4. Add support to `ESP32S3` using `LwIP W5500 or ENC28J60`
+ 4. Add support to `ESP32S2/C3` using `LwIP W5500 or ENC28J60`
 
 ---
 ---
