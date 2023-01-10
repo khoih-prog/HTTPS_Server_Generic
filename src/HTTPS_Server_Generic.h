@@ -11,13 +11,14 @@
 
   Original author: Frank Hessel
 
-  Version: 1.4.0
+  Version: 1.5.0
 
   Version Modified By   Date      Comments
   ------- -----------  ---------- -----------
   1.2.0   K Hoang      03/12/2022 Initial porting for ESP32, WT32_ETH01, ESP32_W5500 and ESP32_ENC
   1.3.0   K Hoang      17/12/2022 Add support to ESP32S3 using LwIP W5500 or ENC28J60
   1.4.0   K Hoang      23/12/2022 Add support to ESP32S2/C3 using LwIP W5500 or ENC28J60
+  1.5.0   K Hoang      09/01/2023 Add support to `ESP32` and `ESP32S2/S3/C3` boards using `LwIP W6100 Ethernet`
  *****************************************************************************************************************************/
 
 #ifndef HTTPS_SERVER_GENERIC_H_
@@ -57,13 +58,13 @@
 
 ////////////////////////////////////////
 
-#define HTTPS_SERVER_GENERIC_VERSION            "HTTPS_Server_Generic v1.4.0"
+#define HTTPS_SERVER_GENERIC_VERSION            "HTTPS_Server_Generic v1.5.0"
 
 #define HTTPS_SERVER_GENERIC_VERSION_MAJOR      1
-#define HTTPS_SERVER_GENERIC_VERSION_MINOR      4
+#define HTTPS_SERVER_GENERIC_VERSION_MINOR      5
 #define HTTPS_SERVER_GENERIC_VERSION_PATCH      0
 
-#define HTTPS_SERVER_GENERIC_VERSION_INT        1004000
+#define HTTPS_SERVER_GENERIC_VERSION_INT        1005000
 
 ////////////////////////////////////////
 
